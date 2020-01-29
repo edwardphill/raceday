@@ -1,7 +1,15 @@
 let raceNumber = Math.floor(Math.random() * 1000);
 
+var express = require("express");
+var path = require("path");
+
+// Sets up the Express App
+// =============================================================
+var app = express();
+var PORT = 3000;
+
 const registeredEarly = false;
-const age = 18;
+const age = 20;
 
 if (age > 18 && registeredEarly === true) {
   raceNumber += 1000;
@@ -40,3 +48,7 @@ if (age > 18 && registeredEarly === true) {
 } else {
   console.log("Please see the registration desk.");
 }
+
+app.listen(PORT, function() {
+  console.log("App listening on PORT " + PORT);
+});
